@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}">
+    {% endif %}{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/iconfont/style.css" type="text/css" />
+
+    <script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
+</head>
+<body>
+    <div id = "genwrapper-mainpage">
+        <section id="sect-mainpage">
+            <h1 id="sitetitle-mainpage"> {{site_title}} </h1>
+            <div id="general-sitesections-mainpage"> 
+                <div id="r-sitesections-mainpage"> 
+                    <div class="itm-sitesections-mainpage"> 
+                        <div style="width:100%; text-align:middle;">
+                            <span class="icon-Controls"> </span>
+                        </div>    
+                        <div style="width:100%; text-align:middle;">
+                            Projects
+                        </div>
+                    </div>
+                    <div class="itm-sitesections-mainpage"> 
+                        <div style="width:100%; text-align:middle;">
+                            <span class="icon-CommentwithLines"> </span>
+                        </div>    
+                        <div style="width:100%; text-align:middle;">
+                            Notes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </div>    
+</body>
+</html>

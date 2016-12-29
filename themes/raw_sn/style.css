@@ -1,0 +1,210 @@
+/*=================================*/
+/* Pico Default Theme
+/* By: Gilbert Pellegrom
+/* http: //dev7studios.com
+/*=================================*/
+
+/* Reset Styles
+/*---------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    quotes: "" "";
+}
+
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+    display: block;
+}
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button {
+    cursor: pointer;
+}
+
+/* make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+    width: auto;
+    overflow: visible;
+}
+
+/* Sharper Thumbnails */
+img {
+    -ms-interpolation-mode: bicubic;
+}
+
+/* Input Styles
+/*---------------------------------------------*/
+input,
+textarea,
+select {
+    padding: 5px;
+    font: 400 1em Verdana, Sans-serif;
+    color: #666;
+    background: #fff;
+    border: 1px solid #999999;
+    margin: 0 0 1em 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    color: #000;
+    background: #fff;
+    border: 1px solid #666666;
+}
+
+/* Main Styles
+/*---------------------------------------------*/
+html { height: 100%; }
+
+body {
+ 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+
+/* Structure Styles
+/*---------------------------------------------*/
+section#sect-mainpage {
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 30px;
+
+    -webkit-box-shadow: 0px 0px 30px 2px rgba(110,110,110,1);
+    -moz-box-shadow: 0px 0px 30px 2px rgba(110,110,110,1);
+    box-shadow: 0px 0px 30px 2px rgba(110,110,110,1);
+
+    background-color: rgb(238, 238, 238);
+    border: 2px solid #6e6e6e;
+}
+div#genwrapper-mainpage {
+    width:100%;
+}
+h1#sitetitle-mainpage{
+    width:100%;
+    text-align: center;
+    font-family: Monospace;
+    font-size:18px;
+    clear: both;
+    color:black;
+}
+div#general-sitesections-mainpage{
+    width:100%;
+    clear:both;
+    color:black;
+    display: table;
+}
+div#r-sitesections-mainpage{
+    width:100%;
+    display:table-row;
+    
+}
+/* Misc Styles
+/*---------------------------------------------*/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+/* Media Queries
+/*---------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .inner {
+        width: 85%;
+    }
+    .inner img {
+        width:100%;
+    }
+    #header {
+        margin-bottom: 40px;
+        padding: 30px 0;
+    }
+    #header h1 {
+        float: none;
+    }
+    #header nav {
+        float: none;
+        width: 100%;
+    }
+    #header nav ul {
+        padding: 0;
+    }
+    #header nav li {
+        display: block;
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+    #header nav li a {
+        display: block;
+        margin: 0;
+        padding: 10px 0;
+    }
+    #footer {
+        margin-top: 40px;
+        padding: 30px 0;
+    }
+}
