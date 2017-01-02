@@ -119,7 +119,8 @@ sup {
 /*---------------------------------------------*/
 section#sect-mainpage {
     display: block;
-    width: 30%;
+    width: 50%;
+    min-width:300px;
     margin-left: auto;
     margin-right:auto;
     margin-top: 30px;
@@ -130,15 +131,23 @@ section#sect-mainpage {
 
     background-color: rgb(238, 238, 238);
     border: 2px solid #6e6e6e;
+
+    /*center*/
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    left: 50%;
 }
 div#genwrapper-mainpage {
     width:100%;
+    position: relative;
+    height: 100%;
 }
 h1#sitetitle-mainpage{
     width:100%;
     text-align: center;
     font-family: Monospace;
-    font-size:18px;
+    font-size:50px;
     clear: both;
     color:black;
 }
@@ -152,6 +161,23 @@ div#r-sitesections-mainpage{
     width:100%;
     display:table-row;
     
+}
+div.itm-sitesections-mainpage{
+    width:50%;
+    display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+div.pyctogram-itm-sitesections-mainpage {
+    width:100%; 
+    text-align:center;
+    font-size:100px;
+}
+div.caption-itm-sitesections-mainpage {
+    width:100%; 
+    text-align:center;
+    font-size:25px;
+    font-family: monospace;
 }
 /* Misc Styles
 /*---------------------------------------------*/
