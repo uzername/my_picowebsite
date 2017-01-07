@@ -184,6 +184,10 @@ div.caption-itm-sitesections-mainpage {
     font-size:25px;
     font-family: monospace;
 }
+div.pyctogram-itm-sitesections-mainpage a, div.caption-itm-sitesections-mainpage a {
+    text-decoration: none;
+    color:black;
+}
 /*general pages template*/
 header#header {
     background-color: black;
@@ -191,15 +195,54 @@ header#header {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+h1#header-logo {
+    float:left;
+}
 a#logo {
     font-family: monospace;
     font-weight: bold;
     color: white;
-    font-size:25px;
+    font-size:30px;
+    text-decoration: none;
 }
 header#header div.inner {
     width: 75%;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+div#header-generalcategories {
+    clear:both;
+    color: white;
+
+}
+div#header-generalcategories > span > a {
+    color:white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+div#header-navigations {
+    float:right;
+    position: relative;
+}
+div#header-importantpages {
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 15px;
+   letter-spacing: 2px;
+   color: white;
+   line-height:25px;
+   border-top-color: white;
+   border-top-style: dotted;
+   border-top-width: 1px;
+}
+#header-navheader-itm-pagestext, #header-navheader-itm-prjtext, #header-navheader-itm-notestext{
+    display: inline;
+}
+#header-navheader-itm-pagesicon, #header-navheader-itm-prjicon, #header-navheader-itm-notesicon{
+    display: none;
 }
 /* Misc Styles
 /*---------------------------------------------*/
@@ -252,4 +295,18 @@ header#header div.inner {
     #footer {
 
     }
+}
+@media only screen and (max-width: 400px) {
+#header-navheader-itm-pagestext, #header-navheader-itm-prjtext, #header-navheader-itm-notestext{
+    display: none;
+}
+#header-navheader-itm-pagesicon, #header-navheader-itm-prjicon, #header-navheader-itm-notesicon{
+    display: inline;
+}
+#header-navheader-itm-pagesicon span, #header-navheader-itm-prjicon a span, #header-navheader-itm-notesicon a span {
+    font-size: 30px;
+}
+div#header-importantpages {
+    border-top-width: 0;
+}
 }
