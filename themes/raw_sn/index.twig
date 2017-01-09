@@ -28,11 +28,12 @@
                       <!--responsive design. icons are shown if the page is small enough-->
                       <span class="header-navheader-itm" id="header-navheader-itm-prjicon"><a href="/?projects"> <span class="icon-Controls"> </span> </a></span>
                       <span class="header-navheader-itm" id="header-navheader-itm-notesicon"><a href="/?notes"> <span class="icon-CommentwithLines"> </span> </a></span>
+                      <span class="header-navheader-itm" id="header-navheader-itm-pagesicon"><a href="/?important"><span class="icon-Options"> </span></a> </span>
                  </div>
                  <div id="header-importantpages">
                      <!-- this section contains links to important pages. These important pages fall into Notes category. This page, index.twig is being rendered on rendering each content page, so the tag should be available -->
                      <span id="header-navheader-itm-pagestext">Important Pages</span>
-                     <span id="header-navheader-itm-pagesicon"> <span class="icon-Options"> </span> </span>
+                     
                      {% set debugFragment = 1 %}
                      {% if debugFragment == 0 %}
                      {% for singlepage in pages %}
@@ -54,14 +55,12 @@
 
     <footer id="footer">
         <div class="inner">
-            <div class="social">
-                {% for social in meta.social %}
-                    <a href="{{ social.url }}" title="{{ social.title }}"><span class="icon-{{ social.icon }}"></span></a>
-                {% endfor %}
+            <div id="footer-ownername">
+             SomeName's website for notes and projects.
+            </div>    
+            <div id="footer-credential">
+              Runs on <a href="http://picocms.org/">Pico CMS</a> &nbsp; flat-file minimalist CMS.
             </div>
-            <a href="http://picocms.org/">Pico</a> was made by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a>
-            and is maintained by <a href="https://github.com/picocms/Pico/graphs/contributors">The Pico Community</a>.
-            Released under the <a href="https://github.com/picocms/Pico/blob/master/LICENSE.md">MIT license</a>.
         </div>
     </footer>
 

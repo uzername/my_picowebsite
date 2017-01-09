@@ -188,7 +188,7 @@ div.pyctogram-itm-sitesections-mainpage a, div.caption-itm-sitesections-mainpage
     text-decoration: none;
     color:black;
 }
-/*general pages template*/
+/*general pages template - header*/
 header#header {
     background-color: black;
     width:100%;
@@ -243,6 +243,46 @@ div#header-importantpages {
 }
 #header-navheader-itm-pagesicon, #header-navheader-itm-prjicon, #header-navheader-itm-notesicon{
     display: none;
+}
+/*general pages template - footer*/
+
+div#footer-ownername {
+    float:left;
+
+    color:white;
+    font-family: Tahoma, Geneva, sans-serif;
+    color:white;
+}
+div#footer-credentials {
+    float:right;
+    position:relative;
+    font-family: Tahoma, Geneva, sans-serif;
+    color:white;
+}
+footer#footer {
+    background-color: black;
+    width:100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+footer#footer div.inner {
+    width: 75%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* CONTENT STYLING */
+section#content {
+    background-color: white;
+}
+h1.general-h1-superhuge{
+    font-family: monospace;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 /* Misc Styles
 /*---------------------------------------------*/
