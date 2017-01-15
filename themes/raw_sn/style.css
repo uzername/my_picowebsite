@@ -216,13 +216,14 @@ div#header-generalcategories {
     color: white;
 
 }
-div#header-generalcategories > span > a {
+div#header-generalcategories > span > a, div#header-importantpages > span > a {
     color:white;
     text-decoration: none;
     font-family: sans-serif;
     font-size: 15px;
     letter-spacing: 3px;
 }
+
 div#header-navigations {
     float:right;
     position: relative;
@@ -237,12 +238,22 @@ div#header-importantpages {
    border-top-color: white;
    border-top-style: dotted;
    border-top-width: 1px;
+   position: relative;
 }
 #header-navheader-itm-pagestext, #header-navheader-itm-prjtext, #header-navheader-itm-notestext{
     display: inline;
 }
 #header-navheader-itm-pagesicon, #header-navheader-itm-prjicon, #header-navheader-itm-notesicon{
     display: none;
+}
+#header-navheader-itm-pageslist {
+    display:none;
+    position:absolute;
+    top:2em;
+    border-style: solid; border-color: white;
+    background-color: black;
+    font-family: sans-serif;
+    
 }
 /*general pages template - footer*/
 
@@ -251,19 +262,21 @@ div#footer-ownername {
 
     color:white;
     font-family: Tahoma, Geneva, sans-serif;
-    color:white;
+    color:black;
+
 }
 div#footer-credentials {
     float:right;
     position:relative;
     font-family: Tahoma, Geneva, sans-serif;
-    color:white;
+    color:black;
 }
 footer#footer {
-    background-color: black;
+    background-color: #B7B7BD;
     width:100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    float: right;
 }
 footer#footer div.inner {
     width: 75%;
@@ -283,6 +296,16 @@ h1.general-h1-superhuge{
     font-size: 30px;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+section#content div.inner {
+    width: 70%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+body#body-backgrounded {
+    background-repeat: repeat;
+    background-image: url('./backgrounds/triangular.png');
 }
 /* Misc Styles
 /*---------------------------------------------*/

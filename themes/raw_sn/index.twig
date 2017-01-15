@@ -15,8 +15,20 @@
     <link rel="stylesheet" href="{{ theme_url }}/iconfont/style.css" type="text/css" />
 
     <script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
+    <script type="text/javascript">
+        //important pages menu hover
+        var menudispalyed = false;
+        document.getElementByID("header-importantpages").onmouseover = function(event) {
+            document.getElementByID("header-navheader-itm-pageslist").style.display="block";
+            menudispalyed = true;
+        }
+        document.getElementByID("header-importantpages").onmouseout = function(event) {
+            document.getElementByID("header-navheader-itm-pageslist").style.display="none";
+            menudispalyed = false;
+        }
+    </script>
 </head>
-<body>
+<body id="body-backgrounded">
 
     <header id="header">
         <div class="inner clearfix">
@@ -32,16 +44,17 @@
                  </div>
                  <div id="header-importantpages">
                      <!-- this section contains links to important pages. These important pages fall into Notes category. This page, index.twig is being rendered on rendering each content page, so the tag should be available -->
-                     <span id="header-navheader-itm-pagestext">Important Pages</span>
-                     
-                     {% set debugFragment = 1 %}
-                     {% if debugFragment == 0 %}
-                     {% for singlepage in pages %}
-                     {% if (singlepage.meta.important is defined and singlepage.meta.important == true) %}
-                        <span>{{ singlepage.title }}</span>
-                     {% endif %}
-                     {% endfor %}
-                     {% endif %}
+                     <span id="header-navheader-itm-pagestext" > <a href="/?important">Important Pages</a> </span>
+                     <div id="header-navheader-itm-pageslist">
+                         {% set debugFragment = 1 %}
+                         {% if debugFragment == 0 %}
+                         {% for singlepage in pages %}
+                         {% if (singlepage.meta.important is defined and singlepage.meta.important == true and singlepage.meta.importantlisted is defined and singlepage.meta.importantlisted == true) %}
+                            <div>{{ singlepage.title }}</div>
+                         {% endif %}
+                         {% endfor %}
+                         {% endif %}
+                     </div>
                  </div>   
             </div>    
         </div>
@@ -58,7 +71,7 @@
             <div id="footer-ownername">
              SomeName's website for notes and projects.
             </div>    
-            <div id="footer-credential">
+            <div id="footer-credentials">
               Runs on <a href="http://picocms.org/">Pico CMS</a> &nbsp; flat-file minimalist CMS.
             </div>
         </div>
