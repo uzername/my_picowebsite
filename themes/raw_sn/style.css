@@ -294,14 +294,28 @@ h1.general-h1-superhuge{
     width: 100%;
     text-align: center;
     font-size: 30px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 section#content div.inner {
     width: 70%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
+}
+div.general-singlenote-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    border-bottom-color: #B7B7BD;
+    border-bottom-style: dashed;
+}
+h2.general-singlenote-header a {
+    text-decoration: underline;
+    color: black;
+    font-size: 21px;
+    font-family: sans-serif;
 }
 body#body-backgrounded {
     background-repeat: repeat;
