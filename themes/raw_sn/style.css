@@ -288,22 +288,16 @@ footer#footer div.inner {
 section#content {
     background-color: white;
 }
-h1.general-h1-superhuge{
-    font-family: monospace;
-    color: black;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+
 section#content div.inner {
     width: 70%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
+
 div.general-singlenote-container {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -320,6 +314,23 @@ h2.general-singlenote-header a {
 body#body-backgrounded {
     background-repeat: repeat;
     background-image: url('./backgrounds/triangular.png');
+}
+h1.general-h1-superhuge{
+    font-family: monospace;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h1.content-h1{
+    font-family: sans-serif;
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 /* Misc Styles
 /*---------------------------------------------*/
