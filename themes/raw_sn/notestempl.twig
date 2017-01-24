@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}">
+    {% endif %}{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ theme_url }}/iconfont/style.css" type="text/css" />
+
+    <script src="{{ theme_url }}/scripts/modernizr-2.6.1.min.js"></script>
+    <script type="text/javascript">
+        //important pages menu hover
+        var menudispalyed = false;
+        document.getElementByID("header-importantpages").onmouseover = function(event) {
+            document.getElementByID("header-navheader-itm-pageslist").style.display="block";
+            menudispalyed = true;
+        }
+        document.getElementByID("header-importantpages").onmouseout = function(event) {
+            document.getElementByID("header-navheader-itm-pageslist").style.display="none";
+            menudispalyed = false;
+        }
+    </script>
+</head>
+<body id="body-backgrounded">
+
+    <header id="header">
+        <div class="inner clearfix">
+            <h1 id="header-logo"><a href="{{ "index"|link }}" id="logo">{{ site_title }}</a></h1>
+            <div id="header-navigations">
+                 <div id="header-generalcategories"> 
+                      <span class="header-navheader-itm" id="header-navheader-itm-prjtext"><a href="/?projects">Projects &nbsp;</a></span>
+                      <span class="header-navheader-itm" id="header-navheader-itm-notestext"><a href="/?notes">Notes</a></span>
+                      <!--responsive design. icons are shown if the page is small enough-->
+                      <span class="header-navheader-itm" id="header-navheader-itm-prjicon"><a href="/?projects"> <span class="icon-Controls"> </span> </a></span>
+                      <span class="header-navheader-itm" id="header-navheader-itm-notesicon"><a href="/?notes"> <span class="icon-CommentwithLines"> </span> </a></span>
+                      <span class="header-navheader-itm" id="header-navheader-itm-pagesicon"><a href="/?important"><span class="icon-Options"> </span></a> </span>
+                 </div>
+                 <div id="header-importantpages">
+                     <!-- this section contains links to important pages. These important pages fall into Notes category. This page, index.twig is being rendered on rendering each content page, so the tag should be available -->
+                     <span id="header-navheader-itm-pagestext" > <a href="/?important">Important Pages</a> </span>
+                     <div id="header-navheader-itm-pageslist">
+                         {% set debugFragment = 1 %}
+                         {% if debugFragment == 0 %}
+                         {% for singlepage in pages %}
+                         {% if (singlepage.meta.important is defined and singlepage.meta.important == true and singlepage.meta.importantlisted is defined and singlepage.meta.importantlisted == true) %}
+                            <div>{{ singlepage.title }}</div>
+                         {% endif %}
+                         {% endfor %}
+                         {% endif %}
+                     </div>
+                 </div>   
+            </div>    
+        </div>
+    </header>
+
+    <section id="content">
+        <div class="inner">
+            <h1 class="general-h1-superhuge">All the notes are here</h1>
+            {% for singlepage in pages %}
+                
+                {% if singlepage.id starts with "notes/" and (singlepage.meta.service is defined) == false %}
+                    <div class="general-singlenote-container">
+                        <h2 class="general-singlenote-header"><a href="{{ singlepage.url }}">{{ singlepage.title }}</a></h2>
+                        <p class="general-singlenote-smalltext">{{ singlepage.quickdescr }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="inner">
+            <div id="footer-ownername">
+             SomeName's website for notes and projects.
+            </div>    
+            <div id="footer-credentials">
+              Runs on <a href="http://picocms.org/">Pico CMS</a> &nbsp; flat-file minimalist CMS <br/> and uses: <a href = "https://daringfireball.net/projects/markdown/">Markdown</a> with <a href="https://michelf.ca/projects/php-markdown/extra/">MarkdownExtra</a>.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
