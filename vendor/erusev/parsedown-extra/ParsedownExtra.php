@@ -217,7 +217,51 @@ class ParsedownExtra extends Parsedown
 
         return $Block;
     }
+    /*Jovan edit starts here: 030217 fenced code blocks*/
+    protected function blockFencedCode($Line) 
+    {
+        #there's a big problem with adding css classes and tags to fenced code blocks. The regexp should be changed
+        if (preg_match('/^['.$Line['text'][0].']{3,}[ ]*([\w-]+)?[ ]*{('.$this->regexAttribute.'+)}[ ]*$/', $Line['text'], $matches, PREG_OFFSET_CAPTURE))
+        {
+            
+            $Element = array(
+                'name' => 'code',
+                'text' => '',
+            );
+            if (isset($matches[1]))
+            {
+                $class = 'language-'.$matches[1][0];
 
+                $Element['attributes'] = array(
+                    'class' => $class,
+                );
+            }
+            $Block = array(
+                'char' => $Line['text'][0],
+                'element' => array(
+                    'name' => 'pre',
+                    'handler' => 'element',
+                    'text' => $Element,
+                ),
+            );
+            # Jovan edit. If available, add attributes
+            if (isset($matches[2][0]))
+            {
+                $Block['element']['attributes'] = $this->parseAttributeData($matches[2][0]);
+            }
+            return $Block;
+        }
+
+    }
+
+    protected function blockFencedCodeComplete($Block)
+    {
+        $Block = parent::blockFencedCodeComplete($Block);
+        
+        
+        return $Block;
+    }
+    /*Jovan edit ends here*/
     #
     # Markup
 
