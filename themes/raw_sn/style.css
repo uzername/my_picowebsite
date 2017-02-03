@@ -341,6 +341,9 @@ section#content div.inner p {
     margin-bottom:10px;
 }
 .content-codeblock {
+    overflow: auto;
+    width: 100%;
+
     font-family: "Lucida Console", Monaco, monospace;
     background-color: #f1f1f1;
     margin-left: 10px;
