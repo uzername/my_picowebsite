@@ -1,0 +1,5 @@
+<form action="access_processor.php" method="post">
+	<div>Token Required:</div>
+	<input type="text" name="sequrity_token"> </input>
+	<br/>
+	<input type="submit" value="Submit">
