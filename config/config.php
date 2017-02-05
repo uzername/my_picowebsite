@@ -51,7 +51,8 @@
  * PLUGINS
  */
 // $config['DummyPlugin.enabled'] = false;      // Force DummyPlugin to be disabled
-
+$config['TokenSecurity.enabled'] = true;
+$config['TokenSecurity.TokenSecurityQueryFormPath']= __DIR__ . '/' . 'queryform';
 /*
  * CUSTOM
  */
