@@ -33,6 +33,11 @@ final class TokenSecurity extends AbstractPicoPlugin
     public $TokenSecurityQueryFormPath = "";
     private $TokenSecurityPageData=array();
 
+    public function __construct(Pico $bokuNoPico)
+    {
+        parent::__construct($bokuNoPico);
+        $this->TokenSecurityQueryFormPath = __DIR__."/"."queryform";
+    }
     /**
      * Triggered after Pico has loaded all available plugins
      *
@@ -97,8 +102,8 @@ final class TokenSecurity extends AbstractPicoPlugin
     public function onContentLoading(&$file)
     {
         // your code
-        error_log(date('Y-m-d H:m:s')." : "."onContentLoading"."\n", 3, __DIR__."/"."debug.log");
-        error_log(date('Y-m-d H:m:s')." : ".print_r($file,true)."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onContentLoading"."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($file,true)."\n", 3, __DIR__."/"."debug.log");
 
     }
 
@@ -178,10 +183,10 @@ final class TokenSecurity extends AbstractPicoPlugin
     public function onMetaParsed(array &$meta)
     {
         // your code
-        error_log(date('Y-m-d H:m:s')." : "."onMetaParsed"."\n", 3, __DIR__."/"."debug.log");
-        error_log(date('Y-m-d H:m:s')." : ".print_r($meta, true)."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onMetaParsed"."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($meta, true)."\n", 3, __DIR__."/"."debug.log");
         if (array_key_exists('usetoken', $meta) && ($meta['usetoken']==1)) {
-            error_log(date('Y-m-d H:m:s')." : "."UseToken found"."\n", 3, __DIR__."/"."debug.log");
+            error_log(__FILE__.date(' Y-m-d H:i:s')." : "."UseToken found"."\n", 3, __DIR__."/"."debug.log");
             $this->TokenSecurityPageData['UseToken'] = 'TRUE';
 
         }
@@ -199,8 +204,8 @@ final class TokenSecurity extends AbstractPicoPlugin
     public function onContentParsing(&$rawContent)
     {
         // your code
-        error_log(date('Y-m-d H:m:s')." : "."onContentParsing"."\n", 3, __DIR__."/"."debug.log");
-        error_log(date('Y-m-d H:m:s')." : ".print_r($rawContent, true)."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onContentParsing"."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($rawContent, true)."\n", 3, __DIR__."/"."debug.log");
     }
 
     /**
@@ -214,17 +219,19 @@ final class TokenSecurity extends AbstractPicoPlugin
     public function onContentPrepared(&$content)
     {
         // your code
-        error_log(date('Y-m-d H:m:s')." : "."onContentPrepared"."\n", 3, __DIR__."/"."debug.log");
-        error_log(date('Y-m-d H:m:s')." : ".print_r($content, true)."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onContentPrepared"."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($content, true)."\n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".$this->TokenSecurityQueryFormPath."\n", 3, __DIR__."/"."debug.log");
         //probably better use Pico::getFileMeta()
         if ((array_key_exists('UseToken', $this->TokenSecurityPageData))&&($this->TokenSecurityPageData['UseToken'] == 'TRUE')) {
             //render here the token entry form
-            $renderPartial=file_get_contents($TokenSecurityQueryFormPath);
-            $renderPartial=$renderPartial."<input type=\"hidden\"></input>"
-            $renderPartial=$renderPartial."</form>";
+            $renderPartial="<form action=\""."/lib/"."token_processor.php"."\" method=\"post\">";
+            $renderPartial.=file_get_contents($this->TokenSecurityQueryFormPath);
+            $renderPartial.="<input type=\"hidden\" name=\"retaddr\" value=\"".$this->getPico()->getRequestUrl()."\" />";
+            $renderPartial.="</form>";
+            $content = $renderPartial;
         }
-        
-        
+                
     }
 
     /**
@@ -329,10 +336,10 @@ final class TokenSecurity extends AbstractPicoPlugin
     {
         // your code
         //Appears that Twig_Environment &$twig object contains all the website content. Yikes!
-        //error_log(date('Y-m-d H:m:s')." : "."on Page Rendering! \n", 3, __DIR__."/"."debug.log");
-        //error_log(date('Y-m-d H:m:s')." : ".print_r($twig,true)."\n", 3, __DIR__."/"."debug.log");
-        //error_log(date('Y-m-d H:m:s')." : ".print_r($twigVariables,true)."\n", 3, __DIR__."/"."debug.log");
-        //error_log(date('Y-m-d H:m:s')." : ".print_r($templateName,true)."\n", 3, __DIR__."/"."debug.log");
+        //error_log(__FILE__.date(' Y-m-d H:i:s')." : "."on Page Rendering! \n", 3, __DIR__."/"."debug.log");
+        //error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($twig,true)."\n", 3, __DIR__."/"."debug.log");
+        //error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($twigVariables,true)."\n", 3, __DIR__."/"."debug.log");
+        //error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($templateName,true)."\n", 3, __DIR__."/"."debug.log");
     }
 
     /**
@@ -344,7 +351,7 @@ final class TokenSecurity extends AbstractPicoPlugin
     public function onPageRendered(&$output)
     {
         // your code
-        error_log(date('Y-m-d H:m:s')." : "."on Page Rendered! \n", 3, __DIR__."/"."debug.log");
+        error_log(__FILE__.date(' Y-m-d H:i:s')." : "."on Page Rendered! \n", 3, __DIR__."/"."debug.log");
 
     }
 }

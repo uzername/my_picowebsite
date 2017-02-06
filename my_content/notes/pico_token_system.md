@@ -13,3 +13,4 @@ We need to define some metadata scheme components for tokens handling.
 *    `[TRUE | FALSE] UseToken`
 *    `[<String>]TokenID`
 
+Pico::getPlugins scans the plugins folder, retrieves all php files in it, so any helping processors should be moved to /lib/ subfolder!

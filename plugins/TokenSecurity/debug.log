@@ -1,0 +1,342 @@
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : onContentLoading
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : D:\PICOCMS_WEBSITE\SRC/my_content/notes/video_edit_with_ffmpeg.md
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : onMetaParsed
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : Array
+(
+    [title] => Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+    [usetoken] => 1
+    [description] => 
+    [author] => 
+    [date] => 
+    [robots] => 
+    [template] => 
+    [date_formatted] => 
+    [time] => 
+)
+
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : UseToken found
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : onContentParsing
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : ---
+Title: Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+UseToken: TRUE
+---
+#Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : onContentPrepared
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : #Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity/queryform
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:04:13 : on Page Rendered! 
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : onContentLoading
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : D:\PICOCMS_WEBSITE\SRC/my_content/notes/video_edit_with_ffmpeg.md
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : onMetaParsed
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : Array
+(
+    [title] => Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+    [usetoken] => 1
+    [description] => 
+    [author] => 
+    [date] => 
+    [robots] => 
+    [template] => 
+    [date_formatted] => 
+    [time] => 
+)
+
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : UseToken found
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : onContentParsing
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : ---
+Title: Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+UseToken: TRUE
+---
+#Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : onContentPrepared
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : #Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity/queryform
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:06:00 : on Page Rendered! 
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : onContentLoading
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : D:\PICOCMS_WEBSITE\SRC/my_content/notes/video_edit_with_ffmpeg.md
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : onMetaParsed
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : Array
+(
+    [title] => Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+    [usetoken] => 1
+    [description] => 
+    [author] => 
+    [date] => 
+    [robots] => 
+    [template] => 
+    [date_formatted] => 
+    [time] => 
+)
+
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : UseToken found
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : onContentParsing
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : ---
+Title: Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+UseToken: TRUE
+---
+#Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : onContentPrepared
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : #Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity/queryform
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:07:04 : on Page Rendered! 
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : onContentLoading
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : D:\PICOCMS_WEBSITE\SRC/my_content/notes/video_edit_with_ffmpeg.md
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : onMetaParsed
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : Array
+(
+    [title] => Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+    [usetoken] => 1
+    [description] => 
+    [author] => 
+    [date] => 
+    [robots] => 
+    [template] => 
+    [date_formatted] => 
+    [time] => 
+)
+
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : UseToken found
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : onContentParsing
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : ---
+Title: Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+UseToken: TRUE
+---
+#Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : onContentPrepared
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : #Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity/queryform
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:26:50 : on Page Rendered! 
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : onContentLoading
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : D:\PICOCMS_WEBSITE\SRC/my_content/notes/video_edit_with_ffmpeg.md
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : onMetaParsed
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : Array
+(
+    [title] => Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+    [usetoken] => 1
+    [description] => 
+    [author] => 
+    [date] => 
+    [robots] => 
+    [template] => 
+    [date_formatted] => 
+    [time] => 
+)
+
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : UseToken found
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : onContentParsing
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : ---
+Title: Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+UseToken: TRUE
+---
+#Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : onContentPrepared
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : #Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity/queryform
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:04 : on Page Rendered! 
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : onContentLoading
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : D:\PICOCMS_WEBSITE\SRC/my_content/notes/video_edit_with_ffmpeg.md
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : onMetaParsed
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : Array
+(
+    [title] => Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+    [usetoken] => 1
+    [description] => 
+    [author] => 
+    [date] => 
+    [robots] => 
+    [template] => 
+    [date_formatted] => 
+    [time] => 
+)
+
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : UseToken found
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : onContentParsing
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : ---
+Title: Tinkering: Long forgotten notes about editing video and making WEBM using a command line tool ffmpeg
+UseToken: TRUE
+---
+#Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : onContentPrepared
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : #Using ffmpeg: a practical example{.content-h1}
+
+This code means a lot. It gives an example of how to use ffmpeg to make WEBM files.
+~~~ {.content-codeblock}
+ffmpeg -i "E:\Internet\webm_experiment\movie.webm" "E:\Internet\webm_experiment\movie1.mp4"
+
+ffmpeg -i "E:\Internet\webm_experiment\LH.3gp" -vn -f mp3  "E:\Internet\webm_experiment\LHs1.mp3"
+
+ffmpeg -ss 01:11 "E:\Internet\webm_experiment\LHs_original.mp3" -t 32.4 "E:\Internet\webm_experiment\LHs_crop1.mp3"
+
+ffmpeg -ss 00:00:00 -i "E:\Internet\webm_experiment\movie1.mp4" -t 00:02.95 -vn -f mp3 "E:\Internet\webm_experiment\movie1s_crop1.mp3"
+
+ffmpeg -i "movie1.mp4" -i "LHs_crop1.mp4" -map 0:v -map 1:a -codec copy "movie_final.mp4"
+~~~ 
+
+Better use [WebmConverter](https://github.com/WebMBro/WebMConverter).
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:27:59 : D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity/queryform
+D:\PICOCMS_WEBSITE\SRC\plugins\TokenSecurity\TokenSecurity.php 2017-02-06 13:28:00 : on Page Rendered! 
