@@ -394,7 +394,7 @@ class Pico
     protected function loadPlugins()
     {
         $this->plugins = array();
-        $pluginFiles = $this->getFiles($this->getPluginsDir(), '.php');
+        $pluginFiles = $this->getFiles($this->getPluginsDir(), '.php', ,false);
         foreach ($pluginFiles as $pluginFile) {
             require_once($pluginFile);
 
@@ -1315,6 +1315,8 @@ class Pico
      * Recursively walks through a directory and returns all containing files
      * matching the specified file extension
      *
+     * Jovan's edit: recursion control. Added $useRecursion param
+     *
      * @param  string $directory     start directory
      * @param  string $fileExtension return files with the given file extension
      *     only (optional)
@@ -1324,7 +1326,7 @@ class Pico
      *     or Pico::SORT_NONE to leave the result unsorted
      * @return array                 list of found files
      */
-    protected function getFiles($directory, $fileExtension = '', $order = self::SORT_ASC)
+    protected function getFiles($directory, $fileExtension = '', $order = self::SORT_ASC, $useRecursion=true)
     {
         $directory = rtrim($directory, '/');
         $result = array();
@@ -1342,7 +1344,9 @@ class Pico
 
                 if (is_dir($directory . '/' . $file)) {
                     // get files recursively
-                    $result = array_merge($result, $this->getFiles($directory . '/' . $file, $fileExtension, $order));
+                    if ($useRecursion == true) { /*additional clause*/
+                        $result = array_merge($result, $this->getFiles($directory . '/' . $file, $fileExtension, $order, $useRecursion));
+                    }
                 } elseif (empty($fileExtension) || (substr($file, -$fileExtensionLength) === $fileExtension)) {
                     $result[] = $directory . '/' . $file;
                 }
