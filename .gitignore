@@ -1,1 +1,4 @@
+./logs/error.log
 ./logs/access.log
+./logs/
+plugins/TokenSecurity/debug.log

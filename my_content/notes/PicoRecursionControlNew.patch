@@ -1,0 +1,119 @@
+From b9419c012d4ac25929b72e76991611fee222a501 Mon Sep 17 00:00:00 2001
+From: uzername <ivanpost777@gmail.com>
+Date: Mon, 6 Feb 2017 15:28:46 +0200
+Subject: [PATCH 1/2] Recursion control in Pico core
+
+---
+ lib/Pico.php | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/lib/Pico.php b/lib/Pico.php
+index d88568a..d23344d 100644
+--- a/lib/Pico.php
++++ b/lib/Pico.php
+@@ -394,7 +394,7 @@ class Pico
+     protected function loadPlugins()
+     {
+         $this->plugins = array();
+-        $pluginFiles = $this->getFiles($this->getPluginsDir(), '.php');
++        $pluginFiles = $this->getFiles($this->getPluginsDir(), '.php', ,false);
+         foreach ($pluginFiles as $pluginFile) {
+             require_once($pluginFile);
+ 
+@@ -1315,6 +1315,8 @@ class Pico
+      * Recursively walks through a directory and returns all containing files
+      * matching the specified file extension
+      *
++     * Jovan's edit: recursion control. Added $useRecursion param
++     *
+      * @param  string $directory     start directory
+      * @param  string $fileExtension return files with the given file extension
+      *     only (optional)
+@@ -1324,7 +1326,7 @@ class Pico
+      *     or Pico::SORT_NONE to leave the result unsorted
+      * @return array                 list of found files
+      */
+-    protected function getFiles($directory, $fileExtension = '', $order = self::SORT_ASC)
++    protected function getFiles($directory, $fileExtension = '', $order = self::SORT_ASC, $useRecursion=true)
+     {
+         $directory = rtrim($directory, '/');
+         $result = array();
+@@ -1342,7 +1344,9 @@ class Pico
+ 
+                 if (is_dir($directory . '/' . $file)) {
+                     // get files recursively
+-                    $result = array_merge($result, $this->getFiles($directory . '/' . $file, $fileExtension, $order));
++                    if ($useRecursion == true) { /*additional clause*/
++                        $result = array_merge($result, $this->getFiles($directory . '/' . $file, $fileExtension, $order, $useRecursion));
++                    }
+                 } elseif (empty($fileExtension) || (substr($file, -$fileExtensionLength) === $fileExtension)) {
+                     $result[] = $directory . '/' . $file;
+                 }
+-- 
+1.7.11.msysgit.0
+
+
+From da51739777e2ac6d01475a7453ae57d541c3f10a Mon Sep 17 00:00:00 2001
+From: uzername <ivanpost777@gmail.com>
+Date: Mon, 6 Feb 2017 15:57:07 +0200
+Subject: [PATCH 2/2] Recursion control in Pico.php should be working
+
+---
+ lib/Pico.php | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/lib/Pico.php b/lib/Pico.php
+index d23344d..651731e 100644
+--- a/lib/Pico.php
++++ b/lib/Pico.php
+@@ -28,6 +28,7 @@
+  */
+ class Pico
+ {
++
+     /**
+      * Sort files in alphabetical ascending order
+      *
+@@ -394,7 +395,7 @@ class Pico
+     protected function loadPlugins()
+     {
+         $this->plugins = array();
+-        $pluginFiles = $this->getFiles($this->getPluginsDir(), '.php', ,false);
++        $pluginFiles = $this->getFiles($this->getPluginsDir(), '.php',self::SORT_ASC,1);
+         foreach ($pluginFiles as $pluginFile) {
+             require_once($pluginFile);
+ 
+@@ -1315,7 +1316,8 @@ class Pico
+      * Recursively walks through a directory and returns all containing files
+      * matching the specified file extension
+      *
+-     * Jovan's edit: recursion control. Added $useRecursion param
++     * Jovan's edit of whole routine (060217): recursion control. Added $useRecursion param. If it is equal to 1024, then do not limit recursive search. (who has 1024 subfolders?)
++     * In another case this variable defines the depth of search
+      *
+      * @param  string $directory     start directory
+      * @param  string $fileExtension return files with the given file extension
+@@ -1326,7 +1328,7 @@ class Pico
+      *     or Pico::SORT_NONE to leave the result unsorted
+      * @return array                 list of found files
+      */
+-    protected function getFiles($directory, $fileExtension = '', $order = self::SORT_ASC, $useRecursion=true)
++    protected function getFiles($directory, $fileExtension = '', $order = self::SORT_ASC, $useRecursion=1024)
+     {
+         $directory = rtrim($directory, '/');
+         $result = array();
+@@ -1344,8 +1346,9 @@ class Pico
+ 
+                 if (is_dir($directory . '/' . $file)) {
+                     // get files recursively
+-                    if ($useRecursion == true) { /*additional clause*/
+-                        $result = array_merge($result, $this->getFiles($directory . '/' . $file, $fileExtension, $order, $useRecursion));
++                    if ($useRecursion > 0) { /*additional clause by Jovan*/
++
++                        $result = array_merge($result, $this->getFiles($directory . '/' . $file, $fileExtension, $order, $useRecursion-1));
+                     }
+                 } elseif (empty($fileExtension) || (substr($file, -$fileExtensionLength) === $fileExtension)) {
+                     $result[] = $directory . '/' . $file;
+-- 
+1.7.11.msysgit.0
+
