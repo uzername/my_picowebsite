@@ -284,6 +284,13 @@ footer#footer div.inner {
     margin-left: auto;
     margin-right: auto;
 }
+div#footer_picoedit a{
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: black;
+}
 /*---------- CONTENT STYLING ----------*/
 section#content {
     background-color: white;

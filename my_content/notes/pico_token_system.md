@@ -13,4 +13,6 @@ We need to define some metadata scheme components for tokens handling.
 *    `[TRUE | FALSE] UseToken`
 *    `[<String>]TokenID`
 
-Pico::getPlugins scans the plugins folder, retrieves all php files in it, so any helping processors should be moved to /lib/ subfolder!
+Pico::getPlugins scans the plugins folder, retrieves all php files in it, so any helping processors should be moved to /lib/ subfolder! Probably it would be OK to use the single module file for processing purposes. In this case the form's target is left blank.
+
+The similar plugin is [Pico Users](https://github.com/nliautaud/pico-users) although it is obsolete and used for earlier version of Pico.

@@ -2,3 +2,4 @@
 ./logs/access.log
 ./logs/
 plugins/TokenSecurity/debug.log
+plugins/TokenSecurity/tokenlib.json

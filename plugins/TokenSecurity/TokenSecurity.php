@@ -185,10 +185,34 @@ final class TokenSecurity extends AbstractPicoPlugin
         // your code
         error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onMetaParsed"."\n", 3, __DIR__."/"."debug.log");
         error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($meta, true)."\n", 3, __DIR__."/"."debug.log");
-        if (array_key_exists('usetoken', $meta) && ($meta['usetoken']==1)) {
+        //here comes all the processing of access
+        if (array_key_exists('usetoken', $meta) && (array_key_exists('tokenpath', $meta)) && ($meta['tokenpath']!="") && ($meta['usetoken']==1)) {
             error_log(__FILE__.date(' Y-m-d H:i:s')." : "."UseToken found"."\n", 3, __DIR__."/"."debug.log");
             $this->TokenSecurityPageData['UseToken'] = 'TRUE';
-
+            //Has the form data being sent?
+            if ( (array_key_exists('retaddr', $_POST))&&(array_key_exists('accesstoken', $_POST)) ) {
+                error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($_POST,true)."\n", 3, __DIR__."/"."debug.log");
+                //check here the token. It has been written in plaintext form field
+                $TheToken = strval(($_POST['accesstoken']));
+                $this->TokenSecurityPageData['accesgranted']='FALSE'
+                //getting info about required token
+                $string = file_get_contents("./tokenlib.json");
+                $json_a = json_decode($string, true);
+                if (array_key_exists($meta['tokenpath'], $json_a)) {
+                    if (($json_a[$meta['tokenpath']]) == md5($TheToken) ) { //token found in library
+                        session_start(); //write param to session
+                        $this->TokenSecurityPageData['accesgranted']='TRUE'
+                        if (!isset($_SESSION['visited_secured_pages'])) {
+                            $_SESSION['visited_secured_pages']= array();
+                        }
+                        if (in_array($_POST['retaddr'], $_SESSION['visited_secured_pages']) == false) {
+                            $_SESSION['visited_secured_pages'][] = $_POST['retaddr'];
+                        }
+                        
+                        
+                    }
+                }
+            }
         }
     }
 
@@ -205,7 +229,8 @@ final class TokenSecurity extends AbstractPicoPlugin
     {
         // your code
         error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onContentParsing"."\n", 3, __DIR__."/"."debug.log");
-        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($rawContent, true)."\n", 3, __DIR__."/"."debug.log");
+        //error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($rawContent, true)."\n", 3, __DIR__."/"."debug.log");
+
     }
 
     /**
@@ -220,12 +245,13 @@ final class TokenSecurity extends AbstractPicoPlugin
     {
         // your code
         error_log(__FILE__.date(' Y-m-d H:i:s')." : "."onContentPrepared"."\n", 3, __DIR__."/"."debug.log");
-        error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($content, true)."\n", 3, __DIR__."/"."debug.log");
+        //error_log(__FILE__.date(' Y-m-d H:i:s')." : ".print_r($content, true)."\n", 3, __DIR__."/"."debug.log");
         error_log(__FILE__.date(' Y-m-d H:i:s')." : ".$this->TokenSecurityQueryFormPath."\n", 3, __DIR__."/"."debug.log");
         //probably better use Pico::getFileMeta()
         if ((array_key_exists('UseToken', $this->TokenSecurityPageData))&&($this->TokenSecurityPageData['UseToken'] == 'TRUE')) {
             //render here the token entry form
-            $renderPartial="<form action=\""."/lib/"."token_processor.php"."\" method=\"post\">";
+            $processAddr="";
+            $renderPartial="<form action=\"".""."\" method=\"post\">";
             $renderPartial.=file_get_contents($this->TokenSecurityQueryFormPath);
             $renderPartial.="<input type=\"hidden\" name=\"retaddr\" value=\"".$this->getPico()->getRequestUrl()."\" />";
             $renderPartial.="</form>";

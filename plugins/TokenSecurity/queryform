@@ -1,5 +1,5 @@
 
 	<div>Token Required:</div>
-	<input type="text" name="sequrity_token"> </input>
+	<input type="text" name="accesstoken"> </input>
 	<br/>
 	<input type="submit" value="Submit">
